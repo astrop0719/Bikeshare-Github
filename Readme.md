@@ -7,3 +7,5 @@ Project Objectives;
 #2 Popular stations and trip - most common start station, end station and trip
 #3 Trip duration - total and average travel time
 #4 User info - counts of each user type, gender (only for NYC and Chicago), and earliest, most recent, most common year of birth (only for NYC and Chicago)
+
+Updated original bikeshare.py code to eliminate "Oops!" from user prompt to reenter input following unacceptable input.
