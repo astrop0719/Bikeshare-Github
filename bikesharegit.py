@@ -16,8 +16,7 @@ import numpy as np
     - average travel time
     #4 User info
     - counts of each user type
-    - counts of each gender (only available for NYC and Chicago)
-    -earliest, most recent, most common year of birth (only available for NYC and Chicago)
+    - most common year of birth (only available for NYC and Chicago)
     Datasets:
     Randomly selected data for the first six months of 2017 are provided for all three cities.
     All three of the data files contain the same core six (6) columns:
@@ -160,19 +159,7 @@ def who(df):
     # bikeshare user types
     user_types = df['User Type'].value_counts()
     print('   - bikeshare user types =\n', user_types)
-    # earliest, most recent, and most frequent year of birth
-    try:
-      earliest_year = df['Birth Year'].min()
-      earliest_year = int(earliest_year)
-      print('   - oldest bikeshare user birth year =', earliest_year)
-    except KeyError:
-      print("   >>> oldest bikeshare user birth year unavailable for selected month <<<")
-    try:
-      most_recent_year = df['Birth Year'].max()
-      most_recent_year = int(most_recent_year)
-      print('   - youngest bikeshare user birth year =', most_recent_year)
-    except KeyError:
-      print("   >>> youngest bikeshare user birth year unavailable for selected month <<<")
+    # most frequent year of birth
     try:
       most_common_year = df['Birth Year'].value_counts().idxmax()
       most_common_year = int(most_common_year)
