@@ -27,8 +27,7 @@ import numpy as np
     - Start Station (e.g., Broadway & Barry Ave)
     - End Station (e.g., Sedgwick St & North Ave)
     - User Type (Subscriber or Customer)
-    The Chicago and New York City files also have the following two columns:
-    - Gender
+    The Chicago and New York City files also have the following column:
     - Birth Year
     """
 CITY_DATA = { 'chicago': 'chicago.csv',
@@ -161,12 +160,6 @@ def who(df):
     # bikeshare user types
     user_types = df['User Type'].value_counts()
     print('   - bikeshare user types =\n', user_types)
-    # bikeshare user gender
-    try:
-      gender_types = df['Gender'].value_counts()
-      print('   - bikeshare user genders =\n', gender_types)
-    except KeyError:
-      print("   >>> bikeshare user gender data unavailable for selected month <<<")
     # earliest, most recent, and most frequent year of birth
     try:
       earliest_year = df['Birth Year'].min()
